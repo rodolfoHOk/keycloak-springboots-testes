@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/teste")
+@RequestMapping("/api/testes")
 public class TesteController {
 	
 	@GetMapping("/anonimo")
 	public ResponseEntity<String> getAnonimo() {
-		return ResponseEntity.ok("Olá Anomino!");
+		return ResponseEntity.ok("Olá Anômino!");
 	}
 	
 	@RolesAllowed("user")
@@ -31,6 +31,6 @@ public class TesteController {
 	@RolesAllowed({"admin", "user"})
 	@GetMapping("/todos-usuarios")
 	public ResponseEntity<String> getTodosUsuarios() {
-		return ResponseEntity.ok("Olá a todos os usuários");
+		return ResponseEntity.ok("Olá Pesssoa Logada!");
 	}
 }
