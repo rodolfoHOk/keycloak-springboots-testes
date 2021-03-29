@@ -1,0 +1,43 @@
+ Keycloak:
+    admin:
+        usuario: keycloaktests
+        senha: kctests
+    reino: 
+        master:
+            usuario: keycloaktests
+            senha: kctests
+        reinolocal-testes:
+            nome: reinolocal-testes
+            roles: 
+                app-admin:
+                    composite: 
+                        client roles: springboot-testes: admin
+                app-user:
+                    composite: 
+                        client roles: springboot-testes: user
+    clientes:
+        clientid: springboot-testes
+        clientsecret: d170ea84-2318-4de0-b094-092b738736e9
+        roles: admin, user
+        service accounts: enable
+            client roles: 
+                realm management: manage-users, manage-realm, manage-clients
+    usuarios:
+        usuario1: 
+            username: usuario1
+            senha: senha1
+            roles: user
+        usuario2:
+            username: usuario2
+            senha: senha2
+            roles: admin
+        usuario3:
+            username: usuario3
+            senha: senha3
+            roles: admin, user
+ 
+ PostgreSQL:
+    usuario: postgres
+    senha: pgtestes
+    pgAdmin:
+    senha: pgtestes
