@@ -2,6 +2,7 @@ package br.com.hioktec.keycloakspringboottestes.restcontroller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.NotFoundException;
 
 import org.keycloak.representations.idm.RoleRepresentation;
@@ -19,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/roles")
+@RolesAllowed("admin")
 @RequiredArgsConstructor
 public class RoleController {
 	

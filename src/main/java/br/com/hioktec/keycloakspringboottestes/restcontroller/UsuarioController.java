@@ -3,6 +3,7 @@ package br.com.hioktec.keycloakspringboottestes.restcontroller;
 import java.net.URI;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.Response;
 
@@ -25,6 +26,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/usuarios")
+@RolesAllowed("admin")
 @RequiredArgsConstructor
 public class UsuarioController {
 	

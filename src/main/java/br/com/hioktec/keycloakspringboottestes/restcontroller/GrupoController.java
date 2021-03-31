@@ -2,6 +2,8 @@ package br.com.hioktec.keycloakspringboottestes.restcontroller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.keycloak.representations.idm.GroupRepresentation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/grupos")
+@RolesAllowed("admin")
 @RequiredArgsConstructor
 public class GrupoController {
 	
